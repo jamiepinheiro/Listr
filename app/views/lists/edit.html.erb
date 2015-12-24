@@ -1,0 +1,9 @@
+<%= render "/layouts/header" %>
+<h2 class="text-center"> <%= @list.title %> </h2>
+<div class="container text-center">
+	<%= form_for(@list) do |f| %>
+		<%= f.text_field :title, :placeholder => @list.title, :class => "text col-sm-6 col-md-3 form-control top-buffer" %> <br>
+		<%= f.text_area :content, :placeholder => @list.content, :class => "text col-sm-6 col-md-3 form-control top-buffer", :id => "listitems", :rows => 10 %> <br>
+		<%= f.submit "Update", :class => "btn btn-lg btn-primary top-buffer"%>
+	<% end %>
+</div>

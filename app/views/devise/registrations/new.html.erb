@@ -1,0 +1,31 @@
+<%= render '/layouts/header' %>
+
+<h2 class="text-center">Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field col-sm-6 col-sm-offset-3 col-md-2 col-md-offset-5">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, :class => "col-sm-12 col-md-12" %>
+  </div>
+
+  <div class="field col-sm-6 col-sm-offset-3 col-md-2 col-md-offset-5">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", :class => "col-sm-12 col-md-12" %>
+  </div>
+
+  <div class="field col-sm-6 col-sm-offset-3 col-md-2 col-md-offset-5">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "col-sm-12 col-md-12" %>
+  </div>
+
+  <div class="actions col-sm-6 col-sm-offset-3 col-md-2 col-md-offset-5">
+    <%= f.submit "Sign up", :class => "col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 btn btn-md btn-primary top-buffer" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
